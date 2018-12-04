@@ -55,3 +55,6 @@ Make note that pushing to github before updating heroku could cause heroku to sa
 I've found using a procfile would cause difficulty, hence i've tried doing it this way. It works pretty well however if you make the fault of pushing client to server or server to client you'll need to clear /delete the heroku end.
 
 Furthermore the client also uses express so that heroku can properly serve the pages.
+
+#### Resources used
+ - https://medium.com/@hellotunmbi/how-to-deploy-angular-application-to-heroku-1d56e09c5147

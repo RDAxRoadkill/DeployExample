@@ -31,6 +31,8 @@ In this example i'll deploy a node.js backend and a angular frontend.
     "node": "6.11.0",
     "npm": "3.10.10"
   }```
+5. Host // port
+
 5. Verify everything works by running ```ng serve```
 6.  After everything runs; add the second remote by using ``` heroku git:remote -a applicationName ``` again.
 	- make sure to be in the client folder.

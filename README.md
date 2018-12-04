@@ -26,7 +26,7 @@ In this example i'll deploy a node.js backend and a angular frontend.
 	 - You can use whatever settings you like, it does not matter for deploying
 2. After the Angular CLI has run, got to your package.json in the client folder and copy ```@angular/cli & @angular/compiler-cli & typescript``` from devDependencies to dependencies.
 3. Under the scripts tag (still in package.json) add the following line
-```"postinstall": "ng build --aot -prod"``` this tells Heroku to build the application using the AOT compiler.
+```"postinstall": "ng build --aot --prod"``` this tells Heroku to build the application using the AOT compiler.
 4. Add Node and NPM engines, you can grab the versions I used in my package.json or run the command ```node-v and npm -v``` to get your locally installed version. You can add the engines underneath your devDependencies by using ```  "engines": {
     "node": "6.11.0",
     "npm": "3.10.10"
@@ -35,10 +35,13 @@ In this example i'll deploy a node.js backend and a angular frontend.
 6.  After everything runs; add the second remote by using ``` heroku git:remote -a applicationName ``` again.
 	- make sure to be in the client folder.
 7. When going back to the main folder; and using the command ```git remote -v``` all remotes should be visible, you can rename the client remote as well or keep it as heroku. (I renamed my to heroku-client)
-8. Using git subtree push again from the main directory ```git subtree push --prefix server heroku-client master``` you should be able to sucessfully update your heroku.
+8. Using git subtree push again from the main directory ```git subtree push --prefix client heroku-client master``` you should be able to sucessfully update your heroku.
 
 
 ### Updating your git-repo
 After setting up both sides you might want to push to your github repo, you can do so like normal by just using ```git push origin branchName```.
 
 I found heroku might say there is not anything to update when you push to github before pushing to heroku. Something to keep in mind.
+
+### Notes
+I've found using a procfile would cause difficulty, hence i've tried doing it this way. It works pretty well however if you make the fault of pushing client to server or server to client you'll need to clear or delete the app entirely.. yeah.. 

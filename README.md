@@ -31,19 +31,27 @@ In this example i'll deploy a node.js backend and a angular frontend.
     "node": "6.11.0",
     "npm": "3.10.10"
   }```
-5. Host // port
-
-5. Verify everything works by running ```ng serve```
-6.  After everything runs; add the second remote by using ``` heroku git:remote -a applicationName ``` again.
+5. You'll need to add a server.js here as well. It'd recommend grabbing mine again
+6. Verify everything works by running ```ng serve```
+7.  After everything runs; add the second remote by using ``` heroku git:remote -a applicationName ``` again.
 	- make sure to be in the client folder.
-7. When going back to the main folder; and using the command ```git remote -v``` all remotes should be visible, you can rename the client remote as well or keep it as heroku. (I renamed my to heroku-client)
-8. Using git subtree push again from the main directory ```git subtree push --prefix client heroku-client master``` you should be able to sucessfully update your heroku.
-
+8. When going back to the main folder; and using the command ```git remote -v``` all remotes should be visible, you can rename the client remote as well or keep it as heroku. (I renamed my to heroku-client)
+9. Using git subtree push again from the main directory ```git subtree push --prefix client heroku-client master``` you should be able to sucessfully update your heroku.
 
 ### Updating your git-repo
 After setting up both sides you might want to push to your github repo, you can do so like normal by just using ```git push origin branchName```.
 
 I found heroku might say there is not anything to update when you push to github before pushing to heroku. Something to keep in mind.
 
+### After all this setup
+When you want to update your heroku client/server just use the git subtree push so
+```git subtree push --prefix client heroku-client master``` or
+```git subtree push --prefix server heroku-server master```
+
+Updating your github repo should go as normal. you can use a commandline or gitkraken etc. 
+Make note that pushing to github before updating heroku could cause heroku to say that there isn't anything to update.
+
 ### Notes
-I've found using a procfile would cause difficulty, hence i've tried doing it this way. It works pretty well however if you make the fault of pushing client to server or server to client you'll need to clear or delete the app entirely.. yeah.. 
+I've found using a procfile would cause difficulty, hence i've tried doing it this way. It works pretty well however if you make the fault of pushing client to server or server to client you'll need to clear /delete the heroku end.
+
+Furthermore the client also uses express so that heroku can properly serve the pages.

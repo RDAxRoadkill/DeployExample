@@ -31,7 +31,8 @@ In this example i'll deploy a node.js backend and a angular frontend.
     "node": "6.11.0",
     "npm": "3.10.10"
   }```
-5. You'll need to add a server.js here as well. It'd recommend grabbing mine again
+5. You'll need to add a server.js here as well. It'd recommend grabbing mine again.
+	- Make sure to change ```/dist/client``` to your respective client name (e.g. ```/dist/amazingApp```)
 6. Verify everything works by running ```ng serve```
 7.  After everything runs; add the second remote by using ``` heroku git:remote -a applicationName ``` again.
 	- make sure to be in the client folder.

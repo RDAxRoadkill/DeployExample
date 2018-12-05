@@ -26,7 +26,7 @@ In this example i'll deploy a node.js backend and a angular frontend.
 	 - You can use whatever settings you like, it does not matter for deploying
 2. After the Angular CLI has run, got to your package.json in the client folder and copy ```typescript and all @angular/``` from devDependencies to dependencies.
 3. Under the scripts tag (still in package.json) add the following line
-```"postinstall": "ng build --aot --prod"``` this tells Heroku to build the application using the AOT compiler, also change your ```"start": "ng serve"``` to ```"start": "node server.js".
+```"postinstall": "ng build --aot --prod"``` this tells Heroku to build the application using the AOT compiler, also change your ```"start": "ng serve"``` to ```"start": "node server.js"```.
 4. Add Node and NPM engines, you can grab the versions I used in my package.json or run the command ```node-v and npm -v``` to get your locally installed version. You can add the engines underneath your devDependencies by using ```  "engines": {
     "node": "6.11.0",
     "npm": "3.10.10"
